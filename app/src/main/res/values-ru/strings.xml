@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello_friend">Привет Друже!</string>
+    <string name="hello_friend_land">Привет Друже Лёжа!</string>
+</resources>

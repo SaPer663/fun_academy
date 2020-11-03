@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Fun Academy</string>
+    <string name="app_name" translatable="false">Fun Academy</string>
+    <string name="hello_friend">Hello Friend!</string>
+    <string name="hello_friend_land">Hello Friend Land!</string>
 </resources>
