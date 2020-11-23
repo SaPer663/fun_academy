@@ -113,63 +113,65 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
-            android:fontFamily="@font/roboto"
-            android:gravity="center_vertical"
             android:text="@string/tag_text"
             android:textColor="#FF3466"
-            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
-            app:layout_constraintTop_toBottomOf="@id/name" />
+            app:layout_constraintTop_toBottomOf="@id/name"
+            style="@style/Roboto14"/>
 
         <ImageView
             android:id="@+id/full_star_1"
-            android:layout_width="13.02dp"
-            android:layout_height="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:src="@mipmap/full_star"
+            android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
             app:layout_constraintTop_toBottomOf="@id/tag"
+            app:tint="#FF3466"
             tools:ignore="ContentDescription" />
 
         <ImageView
             android:id="@+id/full_star_2"
-            android:layout_width="13.02dp"
-            android:layout_height="12dp"
-            android:layout_marginStart="3.25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
-            android:src="@mipmap/full_star"
+            android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/full_star_1"
             app:layout_constraintTop_toBottomOf="@id/tag"
+            app:tint="#FF3466"
             tools:ignore="ContentDescription" />
 
         <ImageView
             android:id="@+id/full_star_3"
-            android:layout_width="13.02dp"
-            android:layout_height="12dp"
-            android:layout_marginStart="3.25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
-            android:src="@mipmap/full_star"
+            android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/full_star_2"
             app:layout_constraintTop_toBottomOf="@id/tag"
+            app:tint="#FF3466"
             tools:ignore="ContentDescription" />
 
         <ImageView
             android:id="@+id/full_star_4"
-            android:layout_width="13.02dp"
-            android:layout_height="12dp"
-            android:layout_marginStart="3.25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
-            android:src="@mipmap/full_star"
+            android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/full_star_3"
             app:layout_constraintTop_toBottomOf="@id/tag"
+            app:tint="#FF3466"
             tools:ignore="ContentDescription" />
 
         <ImageView
             android:id="@+id/empty_star"
-            android:layout_width="13.02dp"
-            android:layout_height="12dp"
-            android:layout_marginStart="3.25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
             android:src="@mipmap/empty_star"
             app:layout_constraintStart_toEndOf="@id/full_star_4"
@@ -178,19 +180,16 @@
 
         <TextView
             android:id="@+id/text_reviews"
-            android:layout_width="112dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="8.89dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
-            android:fontFamily="@font/roboto_black"
-            android:gravity="center_vertical|start"
             android:text="@string/_125_reviews"
             android:textAllCaps="true"
             android:textColor="#6D6D80"
-            android:textSize="14sp"
-            android:textStyle="normal"
             app:layout_constraintStart_toEndOf="@id/empty_star"
-            app:layout_constraintTop_toBottomOf="@id/tag" />
+            app:layout_constraintTop_toBottomOf="@id/tag"
+            style="@style/RobotoBlack14"/>
 
         <TextView
             android:id="@+id/storyline_name"
