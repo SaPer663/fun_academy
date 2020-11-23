@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextRoboto" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+    <style name="RobotoNormal12" parent="TextRoboto">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+</resources>
