@@ -3,6 +3,9 @@
     <style name="TextRoboto" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/roboto</item>
     </style>
+    <style name="TextRobotoBlack" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/roboto_black</item>
+    </style>
     <style name="RobotoNormal12" parent="TextRoboto">
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">12sp</item>
@@ -10,9 +13,14 @@
     <style name="Roboto14" parent="TextRoboto">
         <item name="android:textSize">14sp</item>
     </style>
-    <style name="RobotoBlack14" parent="TextAppearance.AppCompat">
-        <item name="android:fontFamily">@font/roboto_black</item>
+    <style name="RobotoBlack12" parent="TextRobotoBlack">
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="RobotoBlack14" parent="TextRobotoBlack">
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">14sp</item>
+    </style>
+    <style name="TextActors" parent="RobotoBlack12">
+        <item name="android:textColor">#D8D8D8</item>
     </style>
 </resources>
