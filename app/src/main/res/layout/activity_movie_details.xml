@@ -62,7 +62,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/x8"
             android:alpha="0.5"
-            android:gravity="start"
             android:text="@string/back"
             android:textColor="@color/text_white"
             android:drawablePadding="@dimen/x4"
@@ -84,7 +83,6 @@
             android:text="@string/_13"
             android:textColor="@color/text_white"
             android:textStyle="bold"
-            android:gravity="center_vertical"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
             app:layout_constraintBottom_toTopOf="@id/name"
@@ -97,9 +95,8 @@
             android:layout_marginTop="@dimen/x4"
             android:layout_marginEnd="@dimen/x8"
             android:fontFamily="@font/roboto_black"
-            android:gravity="center_vertical"
             android:text="@string/avengers_end_game"
-            android:textColor="#ECECEC"
+            android:textColor="@color/white_light"
             android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
@@ -113,7 +110,7 @@
             android:layout_marginTop="@dimen/x2"
             android:layout_marginEnd="@dimen/x8"
             android:text="@string/tag_text"
-            android:textColor="#FF3466"
+            android:textColor="@color/ping"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
             app:layout_constraintTop_toBottomOf="@id/name"
@@ -127,7 +124,7 @@
             android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
             app:layout_constraintTop_toBottomOf="@id/tag"
-            app:tint="#FF3466"
+            app:tint="@color/ping"
             tools:ignore="ContentDescription" />
 
         <ImageView
@@ -139,7 +136,7 @@
             android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/full_star_1"
             app:layout_constraintTop_toBottomOf="@id/tag"
-            app:tint="#FF3466"
+            app:tint="@color/ping"
             tools:ignore="ContentDescription" />
 
         <ImageView
@@ -151,7 +148,7 @@
             android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/full_star_2"
             app:layout_constraintTop_toBottomOf="@id/tag"
-            app:tint="#FF3466"
+            app:tint="@color/ping"
             tools:ignore="ContentDescription" />
 
         <ImageView
@@ -163,7 +160,7 @@
             android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/full_star_3"
             app:layout_constraintTop_toBottomOf="@id/tag"
-            app:tint="#FF3466"
+            app:tint="@color/ping"
             tools:ignore="ContentDescription" />
 
         <ImageView
@@ -172,7 +169,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/x2"
             android:layout_marginTop="@dimen/x4"
-            android:src="@mipmap/empty_star"
+            android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/full_star_4"
             app:layout_constraintTop_toBottomOf="@id/tag"
             tools:ignore="ContentDescription" />
@@ -185,7 +182,7 @@
             android:layout_marginTop="@dimen/x2"
             android:text="@string/_125_reviews"
             android:textAllCaps="true"
-            android:textColor="#6D6D80"
+            android:textColor="@color/my_gray"
             app:layout_constraintStart_toEndOf="@id/empty_star"
             app:layout_constraintTop_toBottomOf="@id/tag"
             style="@style/RobotoBlack14"/>
@@ -196,7 +193,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x12"
             android:text="@string/storyline"
-            android:textColor="#ECECEC"
+            android:textColor="@color/white_light"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
             app:layout_constraintTop_toBottomOf="@id/text_reviews"
             style="@style/RobotoBlack14"/>
@@ -210,7 +207,7 @@
             android:alpha="0.75"
             android:gravity="start"
             android:text="@string/storyline_text"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/text_white"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/storyline_name"
@@ -222,7 +219,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x12"
             android:text="@string/cast"
-            android:textColor="#ECECEC"
+            android:textColor="@color/white_light"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
             app:layout_constraintTop_toBottomOf="@id/storyline"
             style="@style/RobotoBlack14"/>
@@ -290,7 +287,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/x8"
             android:layout_marginTop="@dimen/x3"
-            android:gravity="start"
+            android:layout_marginBottom="@dimen/x8"
             android:text="@string/robert_downey_u00a0jr"
             app:layout_constraintEnd_toStartOf="@id/text_cap"
             app:layout_constraintHorizontal_chainStyle="spread"
@@ -303,8 +300,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x3"
+            android:layout_marginBottom="@dimen/x8"
             android:layout_marginStart="@dimen/x4"
-            android:gravity="start"
             android:text="@string/chris_evans"
             app:layout_constraintEnd_toStartOf="@id/text_halk"
             app:layout_constraintStart_toEndOf="@id/text_iman"
@@ -316,8 +313,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x3"
+            android:layout_marginBottom="@dimen/x8"
             android:layout_marginStart="@dimen/x4"
-            android:gravity="start"
             android:text="@string/mark_ruffalo"
             app:layout_constraintEnd_toStartOf="@id/text_tor"
             app:layout_constraintStart_toEndOf="@id/text_cap"
@@ -329,9 +326,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x3"
+            android:layout_marginBottom="@dimen/x8"
             android:layout_marginStart="@dimen/x4"
             android:layout_marginEnd="@dimen/x8"
-            android:gravity="start"
             android:text="@string/chris_hemsworth"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/text_halk"
