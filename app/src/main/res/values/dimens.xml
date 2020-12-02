@@ -6,4 +6,7 @@
     <dimen name="x2">4dp</dimen>
     <dimen name="x12">24dp</dimen>
     <dimen name="x3">6dp</dimen>
+    <dimen name="x">2dp</dimen>
+    <dimen name="x24">48dp</dimen>
+    <dimen name="x6">12dp</dimen>
 </resources>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        style="@style/MyCardViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x6"
+        android:layout_marginTop="102dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/bg_the_end_move_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x"
+                android:layout_marginTop="@dimen/x"
+                android:layout_marginEnd="@dimen/x"
+                android:layout_marginBottom="@dimen/x24"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/the_end_move_list"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_mask_the_end_move_list"
+                app:layout_constraintEnd_toEndOf="@id/bg_the_end_move_list"
+                app:layout_constraintStart_toStartOf="@id/bg_the_end_move_list"
+                app:layout_constraintTop_toTopOf="@id/bg_the_end_move_list"
+                app:layout_constraintBottom_toBottomOf="@id/bg_the_end_move_list"
+                tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:id="@+id/fr_tag"
+                style="@style/Roboto14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x3"
+                android:layout_marginBottom="22dp"
+                android:text="@string/action_adventure_drama"
+                android:textSize="8sp"
+                android:textColor="@color/pink"
+                app:layout_constraintStart_toStartOf="@id/bg_the_end_move_list"
+                app:layout_constraintBottom_toBottomOf="@id/bg_the_end_move_list" />
+
+
+
+            <ru.spb.yakovlev.ratingbarsvg.ui.custom.RatingBarSvg
+                android:id="@+id/fr_ratingbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x4"
+                android:layout_marginBottom="@dimen/x4"
+                android:numStars="5"
+                android:progressBackgroundTint="@color/my_grey"
+                android:progressDrawable="@drawable/ratingbar_svg_selector"
+                android:progressTint="@color/pink"
+                android:rating="4"
+                android:secondaryProgressTint="@color/my_grey"
+                app:innerPadding="1dp"
+                app:drawableHeight="@dimen/x4"
+                app:drawableWidth="@dimen/x4"
+                app:layout_constraintBottom_toBottomOf="@id/bg_the_end_move_list"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fr_tag"/>
+
+            <TextView
+                android:id="@+id/fr_text_reviews"
+                style="@style/RobotoBlack14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x3"
+                android:layout_marginTop="@dimen/x"
+                android:layout_marginBottom="@dimen/x4"
+                android:text="@string/_125_reviews"
+                android:textSize="8sp"
+                android:textAllCaps="true"
+                android:textColor="@color/my_grey"
+                app:layout_constraintStart_toEndOf="@id/fr_ratingbar"
+                app:layout_constraintTop_toBottomOf="@id/fr_tag" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x4"
+                android:layout_marginStart="@dimen/x4"
+                android:text="@string/fr_avengers_end_game"
+                android:textColor="@color/text_white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bg_the_end_move_list"
+                style="@style/RobotoBlack14"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x4"
+                android:layout_marginBottom="@dimen/x4"
+                android:text="@string/_137_min"
+                android:textSize="8sp"
+                android:textColor="#565665"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</FrameLayout>

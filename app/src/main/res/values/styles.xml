@@ -23,4 +23,9 @@
     <style name="TextActors" parent="RobotoBlack12">
         <item name="android:textColor">#D8D8D8</item>
     </style>
+    <style name="MyCardViewStyle" parent="Theme.AppCompat.Light">
+        <item name="cardCornerRadius">8dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="cardBackgroundColor">@color/background_color</item>
+    </style>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:background="#191926"
+    android:background="@color/background_color"
     tools:context=".MovieDetailsActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -110,7 +110,7 @@
             android:layout_marginTop="@dimen/x2"
             android:layout_marginEnd="@dimen/x8"
             android:text="@string/tag_text"
-            android:textColor="@color/ping"
+            android:textColor="@color/pink"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
             app:layout_constraintTop_toBottomOf="@id/name"
@@ -124,7 +124,7 @@
             android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
             app:layout_constraintTop_toBottomOf="@id/tag"
-            app:tint="@color/ping"
+            app:tint="@color/pink"
             tools:ignore="ContentDescription" />
 
         <ImageView
@@ -136,7 +136,7 @@
             android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/full_star_1"
             app:layout_constraintTop_toBottomOf="@id/tag"
-            app:tint="@color/ping"
+            app:tint="@color/pink"
             tools:ignore="ContentDescription" />
 
         <ImageView
@@ -148,7 +148,7 @@
             android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/full_star_2"
             app:layout_constraintTop_toBottomOf="@id/tag"
-            app:tint="@color/ping"
+            app:tint="@color/pink"
             tools:ignore="ContentDescription" />
 
         <ImageView
@@ -160,7 +160,7 @@
             android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/full_star_3"
             app:layout_constraintTop_toBottomOf="@id/tag"
-            app:tint="@color/ping"
+            app:tint="@color/pink"
             tools:ignore="ContentDescription" />
 
         <ImageView
@@ -182,7 +182,7 @@
             android:layout_marginTop="@dimen/x2"
             android:text="@string/_125_reviews"
             android:textAllCaps="true"
-            android:textColor="@color/my_gray"
+            android:textColor="@color/my_grey"
             app:layout_constraintStart_toEndOf="@id/empty_star"
             app:layout_constraintTop_toBottomOf="@id/tag"
             style="@style/RobotoBlack14"/>
