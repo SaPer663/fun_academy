@@ -81,12 +81,10 @@
             android:layout_marginBottom="@dimen/x6"
             android:background="@mipmap/rectangle"
             android:text="@string/_13"
-            android:textColor="@color/text_white"
-            android:textStyle="bold"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
             app:layout_constraintBottom_toTopOf="@id/name"
-            style="@style/RobotoBlack12"/>
+            style="@style/BlackRectangle"/>
 
         <TextView
             android:id="@+id/name"
