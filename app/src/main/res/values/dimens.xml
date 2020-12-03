@@ -9,4 +9,8 @@
     <dimen name="x">2dp</dimen>
     <dimen name="x24">48dp</dimen>
     <dimen name="x6">12dp</dimen>
+    <dimen name="one">1dp</dimen>
+    <dimen name="x11">22dp</dimen>
+    <dimen name="x51">102dp</dimen>
+    <dimen name="x27">54dp</dimen>
 </resources>
