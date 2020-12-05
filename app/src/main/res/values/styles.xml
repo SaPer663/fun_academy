@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="TextRoboto" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/roboto</item>
     </style>
+
     <style name="TextRobotoBlack" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/roboto_black</item>
     </style>
+
     <style name="RobotoBlack14" parent="TextRobotoBlack">
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">14sp</item>
     </style>
+
     <style name="RobotoBlack14White" parent="RobotoBlack14">
         <item name="android:textColor">@color/text_white</item>
     </style>
+
     <style name="RobotoBlack12" parent="TextRobotoBlack">
         <item name="android:textSize">12sp</item>
     </style>
+
     <style name="TextActors" parent="RobotoBlack12">
         <item name="android:textColor">#D8D8D8</item>
     </style>
+
     <style name="RobotoBlack8Grey" parent="TextRobotoBlack">
         <item name="android:textSize">8sp</item>
         <item name="android:textColor">@color/my_grey</item>
@@ -30,19 +37,24 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">12sp</item>
     </style>
+
     <style name="Roboto14" parent="TextRoboto">
         <item name="android:textSize">14sp</item>
     </style>
+
     <style name="RobotoPink" parent="TextRoboto">
         <item name="android:textColor">@color/pink</item>
     </style>
+
     <style name="RobotoPink8" parent="RobotoPink">
         <item name="android:textSize">8sp</item>
     </style>
+
     <style name="BlackRectangle" parent="RobotoBlack12">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/text_white</item>
     </style>
+
     <style name="MyCardViewStyle" parent="Theme.AppCompat.Light">
         <item name="cardCornerRadius">8dp</item>
         <item name="cardElevation">2dp</item>

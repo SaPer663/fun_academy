@@ -2,7 +2,6 @@
 <resources>
     <dimen name="x8">16dp</dimen>
     <dimen name="x4">8dp</dimen>
-    <dimen name="x6">12dp</dimen>
     <dimen name="x2">4dp</dimen>
     <dimen name="x12">24dp</dimen>
     <dimen name="x3">6dp</dimen>
