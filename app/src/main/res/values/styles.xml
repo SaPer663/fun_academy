@@ -11,7 +11,7 @@
 
     <style name="RobotoBlack14" parent="TextRobotoBlack">
         <item name="android:textStyle">normal</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">@dimen/_14sp</item>
     </style>
 
     <style name="RobotoBlack14White" parent="RobotoBlack14">
@@ -19,7 +19,7 @@
     </style>
 
     <style name="RobotoBlack12" parent="TextRobotoBlack">
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">@dimen/_12sp</item>
     </style>
 
     <style name="TextActors" parent="RobotoBlack12">
@@ -27,7 +27,7 @@
     </style>
 
     <style name="RobotoBlack8Grey" parent="TextRobotoBlack">
-        <item name="android:textSize">8sp</item>
+        <item name="android:textSize">@dimen/_8sp</item>
         <item name="android:textColor">@color/my_grey</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textAllCaps">true</item>
@@ -35,11 +35,11 @@
 
     <style name="RobotoNormal12" parent="TextRoboto">
         <item name="android:textStyle">normal</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">@dimen/_12sp</item>
     </style>
 
     <style name="Roboto14" parent="TextRoboto">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">@dimen/_14sp</item>
     </style>
 
     <style name="RobotoPink" parent="TextRoboto">
@@ -47,7 +47,7 @@
     </style>
 
     <style name="RobotoPink8" parent="RobotoPink">
-        <item name="android:textSize">8sp</item>
+        <item name="android:textSize">@dimen/_8sp</item>
     </style>
 
     <style name="BlackRectangle" parent="RobotoBlack12">
@@ -56,8 +56,8 @@
     </style>
 
     <style name="MyCardViewStyle" parent="Theme.AppCompat.Light">
-        <item name="cardCornerRadius">8dp</item>
-        <item name="cardElevation">2dp</item>
+        <item name="cardCornerRadius">@dimen/x4</item>
+        <item name="cardElevation">@dimen/x</item>
         <item name="cardBackgroundColor">@color/background_color</item>
         <item name="android:layout_marginTop">@dimen/x51</item>
         <item name="android:layout_marginStart">@dimen/x6</item>
