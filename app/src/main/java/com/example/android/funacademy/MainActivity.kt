@@ -5,17 +5,32 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), FragmentMoviesList.ClickListener {
+
+    private val fragmentMoviesList = FragmentMoviesList()
+        .apply {
+            setListener(this@MainActivity)
+        }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val textViewShow: TextView = findViewById(R.id.textview_activity_main)
-        textViewShow.setOnClickListener{ moveToMovesScreen()}
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .apply {
+                    addToBackStack(null)
+                    add(R.id.fragments_container, FragmentMoviesList())
+                    commit()
+                }
+        }
     }
 
-    private fun moveToMovesScreen() {
-        val intent = Intent(this, MovieDetailsActivity::class.java)
-        startActivity(intent)
+    override fun clickFragment() {
+        supportFragmentManager.beginTransaction().apply {
+            addToBackStack(null)
+            replace(R.id.fragments_container, FragmentMoviesDetails())
+            commit()
+        }
     }
 }
