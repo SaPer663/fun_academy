@@ -5,12 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 
-class MainActivity : AppCompatActivity(), FragmentMoviesList.ClickListener {
+class MainActivity : AppCompatActivity() {
 
-    private val fragmentMoviesList = FragmentMoviesList()
-        .apply {
-            setListener(this@MainActivity)
-        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,18 +15,9 @@ class MainActivity : AppCompatActivity(), FragmentMoviesList.ClickListener {
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .apply {
-                    addToBackStack(null)
-                    add(R.id.fragments_container, FragmentMoviesList())
+                    replace(R.id.fragments_container, FragmentMoviesList())
                     commit()
                 }
-        }
-    }
-
-    override fun clickFragment() {
-        supportFragmentManager.beginTransaction().apply {
-            addToBackStack(null)
-            replace(R.id.fragments_container, FragmentMoviesDetails())
-            commit()
         }
     }
 }

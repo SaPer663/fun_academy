@@ -10,33 +10,21 @@ import androidx.fragment.app.Fragment
 
 class FragmentMoviesList : Fragment(R.layout.fragment_movies_list) {
 
-    private var listener: ClickListener? = null
     private var cardView: CardView? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         cardView = view.findViewById<CardView>(R.id.card_view).apply {
-            setOnClickListener { listener?.clickFragment() }
+            setOnClickListener { clickFragment() }
         }
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (context is ClickListener) {
-            listener = context
-        }
-    }
-
-    override fun onDetach() {
-        super.onDetach()
-        listener = null
-    }
-
-    fun setListener(l: ClickListener) {
-        listener = l
-    }
-
-    interface ClickListener {
-        fun clickFragment()
+    private fun clickFragment() {
+        activity?.supportFragmentManager?.beginTransaction()
+            ?.apply {
+                addToBackStack(null)
+                replace(R.id.fragments_container, FragmentMoviesDetails())
+                commit()
+            }
     }
 }
