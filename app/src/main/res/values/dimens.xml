@@ -2,8 +2,17 @@
 <resources>
     <dimen name="x8">16dp</dimen>
     <dimen name="x4">8dp</dimen>
-    <dimen name="x6">12dp</dimen>
     <dimen name="x2">4dp</dimen>
     <dimen name="x12">24dp</dimen>
     <dimen name="x3">6dp</dimen>
+    <dimen name="x">2dp</dimen>
+    <dimen name="x24">48dp</dimen>
+    <dimen name="x6">12dp</dimen>
+    <dimen name="x11">22dp</dimen>
+    <dimen name="x51">102dp</dimen>
+    <dimen name="x27">54dp</dimen>
+    <dimen name="_8sp">8sp</dimen>
+    <dimen name="_12sp">12sp</dimen>
+    <dimen name="_14sp">14sp</dimen>
+    <dimen name="_40sp">40sp</dimen>
 </resources>

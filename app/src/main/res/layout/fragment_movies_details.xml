@@ -2,10 +2,10 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:background="#191926"
-    tools:context=".MovieDetailsActivity">
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -32,7 +32,6 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.04" />
 
-
         <ImageView
             android:id="@+id/background_image"
             android:layout_width="0dp"
@@ -56,37 +55,34 @@
             app:layout_constraintTop_toTopOf="@id/background_image"
             tools:ignore="ContentDescription" />
 
-
         <TextView
+            android:id="@+id/back"
+            style="@style/RobotoNormal12"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/x8"
             android:alpha="0.5"
+            android:drawablePadding="@dimen/x4"
             android:text="@string/back"
             android:textColor="@color/text_white"
-            android:drawablePadding="@dimen/x4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/top_menu_guideline"
-            app:layout_constraintBottom_toBottomOf="@id/top_menu_guideline"
             app:drawableStartCompat="@mipmap/path_left"
-            style="@style/RobotoNormal12"/>
-
-
+            app:layout_constraintBottom_toBottomOf="@id/top_menu_guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/top_menu_guideline" />
 
         <TextView
             android:id="@+id/rectangl_13"
+            style="@style/BlackRectangle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/x6"
             android:background="@mipmap/rectangle"
+            android:gravity="center_vertical"
             android:text="@string/_13"
-            android:textColor="@color/text_white"
-            android:textStyle="bold"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
             app:layout_constraintBottom_toTopOf="@id/name"
-            style="@style/RobotoBlack12"/>
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@id/start_vertical_guideline" />
 
         <TextView
             android:id="@+id/name"
@@ -97,24 +93,24 @@
             android:fontFamily="@font/roboto_black"
             android:text="@string/avengers_end_game"
             android:textColor="@color/white_light"
-            android:textSize="40sp"
+            android:textSize="@dimen/_40sp"
+            app:layout_constraintBottom_toBottomOf="@id/background_guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
-            app:layout_constraintTop_toTopOf="@id/background_guideline"
-            app:layout_constraintBottom_toBottomOf="@id/background_guideline"/>
+            app:layout_constraintTop_toTopOf="@id/background_guideline" />
 
         <TextView
             android:id="@+id/tag"
+            style="@style/Roboto14"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x2"
             android:layout_marginEnd="@dimen/x8"
             android:text="@string/tag_text"
-            android:textColor="@color/ping"
+            android:textColor="@color/pink"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
-            app:layout_constraintTop_toBottomOf="@id/name"
-            style="@style/Roboto14"/>
+            app:layout_constraintTop_toBottomOf="@id/name" />
 
         <ImageView
             android:id="@+id/full_star_1"
@@ -124,7 +120,7 @@
             android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
             app:layout_constraintTop_toBottomOf="@id/tag"
-            app:tint="@color/ping"
+            app:tint="@color/pink"
             tools:ignore="ContentDescription" />
 
         <ImageView
@@ -136,7 +132,7 @@
             android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/full_star_1"
             app:layout_constraintTop_toBottomOf="@id/tag"
-            app:tint="@color/ping"
+            app:tint="@color/pink"
             tools:ignore="ContentDescription" />
 
         <ImageView
@@ -148,7 +144,7 @@
             android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/full_star_2"
             app:layout_constraintTop_toBottomOf="@id/tag"
-            app:tint="@color/ping"
+            app:tint="@color/pink"
             tools:ignore="ContentDescription" />
 
         <ImageView
@@ -160,7 +156,7 @@
             android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/full_star_3"
             app:layout_constraintTop_toBottomOf="@id/tag"
-            app:tint="@color/ping"
+            app:tint="@color/pink"
             tools:ignore="ContentDescription" />
 
         <ImageView
@@ -176,30 +172,31 @@
 
         <TextView
             android:id="@+id/text_reviews"
+            style="@style/RobotoBlack14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/x4"
             android:layout_marginTop="@dimen/x2"
             android:text="@string/_125_reviews"
             android:textAllCaps="true"
-            android:textColor="@color/my_gray"
+            android:textColor="@color/my_grey"
             app:layout_constraintStart_toEndOf="@id/empty_star"
-            app:layout_constraintTop_toBottomOf="@id/tag"
-            style="@style/RobotoBlack14"/>
+            app:layout_constraintTop_toBottomOf="@id/tag" />
 
         <TextView
             android:id="@+id/storyline_name"
+            style="@style/RobotoBlack14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x12"
             android:text="@string/storyline"
             android:textColor="@color/white_light"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
-            app:layout_constraintTop_toBottomOf="@id/text_reviews"
-            style="@style/RobotoBlack14"/>
+            app:layout_constraintTop_toBottomOf="@id/text_reviews" />
 
         <TextView
             android:id="@+id/storyline"
+            style="@style/Roboto14"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x2"
@@ -208,21 +205,20 @@
             android:gravity="start"
             android:text="@string/storyline_text"
             android:textColor="@color/text_white"
-            app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/storyline_name"
-            style="@style/Roboto14"/>
+            app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
+            app:layout_constraintTop_toBottomOf="@id/storyline_name" />
 
         <TextView
             android:id="@+id/cast_name"
+            style="@style/RobotoBlack14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x12"
             android:text="@string/cast"
             android:textColor="@color/white_light"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
-            app:layout_constraintTop_toBottomOf="@id/storyline"
-            style="@style/RobotoBlack14"/>
+            app:layout_constraintTop_toBottomOf="@id/storyline" />
 
         <ImageView
             android:id="@+id/iman"
@@ -242,11 +238,11 @@
             android:id="@+id/cap"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/x4"
             android:layout_marginStart="@dimen/x4"
-            app:layout_constraintDimensionRatio="1:1"
+            android:layout_marginTop="@dimen/x4"
             android:scaleType="centerCrop"
             android:src="@mipmap/cap"
+            app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@id/halk"
             app:layout_constraintStart_toEndOf="@id/iman"
             app:layout_constraintTop_toBottomOf="@id/cast_name"
@@ -256,11 +252,11 @@
             android:id="@+id/halk"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/x4"
             android:layout_marginStart="@dimen/x4"
-            app:layout_constraintDimensionRatio="1:1"
+            android:layout_marginTop="@dimen/x4"
             android:scaleType="centerCrop"
             android:src="@mipmap/halk"
+            app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@id/tor"
             app:layout_constraintStart_toEndOf="@id/cap"
             app:layout_constraintTop_toBottomOf="@id/cast_name"
@@ -270,12 +266,12 @@
             android:id="@+id/tor"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginStart="@dimen/x4"
             android:layout_marginTop="@dimen/x4"
             android:layout_marginEnd="@dimen/x8"
-            android:layout_marginStart="@dimen/x4"
-            app:layout_constraintDimensionRatio="1:1"
             android:scaleType="centerCrop"
             android:src="@mipmap/tor"
+            app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/halk"
             app:layout_constraintTop_toBottomOf="@id/cast_name"
@@ -283,6 +279,7 @@
 
         <TextView
             android:id="@+id/text_iman"
+            style="@style/TextActors"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/x8"
@@ -292,49 +289,47 @@
             app:layout_constraintEnd_toStartOf="@id/text_cap"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iman"
-            style="@style/TextActors"/>
+            app:layout_constraintTop_toBottomOf="@id/iman" />
 
         <TextView
             android:id="@+id/text_cap"
+            style="@style/TextActors"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x4"
             android:layout_marginTop="@dimen/x3"
             android:layout_marginBottom="@dimen/x8"
-            android:layout_marginStart="@dimen/x4"
             android:text="@string/chris_evans"
             app:layout_constraintEnd_toStartOf="@id/text_halk"
             app:layout_constraintStart_toEndOf="@id/text_iman"
-            app:layout_constraintTop_toBottomOf="@id/cap"
-            style="@style/TextActors"/>
+            app:layout_constraintTop_toBottomOf="@id/cap" />
 
         <TextView
             android:id="@+id/text_halk"
+            style="@style/TextActors"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x4"
             android:layout_marginTop="@dimen/x3"
             android:layout_marginBottom="@dimen/x8"
-            android:layout_marginStart="@dimen/x4"
             android:text="@string/mark_ruffalo"
             app:layout_constraintEnd_toStartOf="@id/text_tor"
             app:layout_constraintStart_toEndOf="@id/text_cap"
-            app:layout_constraintTop_toBottomOf="@id/halk"
-            style="@style/TextActors"/>
+            app:layout_constraintTop_toBottomOf="@id/halk" />
 
         <TextView
             android:id="@+id/text_tor"
+            style="@style/TextActors"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/x3"
-            android:layout_marginBottom="@dimen/x8"
             android:layout_marginStart="@dimen/x4"
+            android:layout_marginTop="@dimen/x3"
             android:layout_marginEnd="@dimen/x8"
+            android:layout_marginBottom="@dimen/x8"
             android:text="@string/chris_hemsworth"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/text_halk"
-            app:layout_constraintTop_toBottomOf="@id/tor"
-            style="@style/TextActors"/>
-
+            app:layout_constraintTop_toBottomOf="@id/tor" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
