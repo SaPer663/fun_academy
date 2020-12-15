@@ -220,116 +220,21 @@
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
             app:layout_constraintTop_toBottomOf="@id/storyline" />
 
-        <ImageView
-            android:id="@+id/iman"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_actors"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/x8"
             android:layout_marginTop="@dimen/x4"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/iman"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toStartOf="@id/cap"
+            android:layout_marginBottom="@dimen/x8"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cast_name"
-            tools:ignore="ContentDescription" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:listitem="@layout/view_holder_actor">
 
-        <ImageView
-            android:id="@+id/cap"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/x4"
-            android:layout_marginTop="@dimen/x4"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/cap"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toStartOf="@id/halk"
-            app:layout_constraintStart_toEndOf="@id/iman"
-            app:layout_constraintTop_toBottomOf="@id/cast_name"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/halk"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/x4"
-            android:layout_marginTop="@dimen/x4"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/halk"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toStartOf="@id/tor"
-            app:layout_constraintStart_toEndOf="@id/cap"
-            app:layout_constraintTop_toBottomOf="@id/cast_name"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/tor"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/x4"
-            android:layout_marginTop="@dimen/x4"
-            android:layout_marginEnd="@dimen/x8"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/tor"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/halk"
-            app:layout_constraintTop_toBottomOf="@id/cast_name"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:id="@+id/text_iman"
-            style="@style/TextActors"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/x8"
-            android:layout_marginTop="@dimen/x3"
-            android:layout_marginBottom="@dimen/x8"
-            android:text="@string/robert_downey_u00a0jr"
-            app:layout_constraintEnd_toStartOf="@id/text_cap"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iman" />
-
-        <TextView
-            android:id="@+id/text_cap"
-            style="@style/TextActors"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/x4"
-            android:layout_marginTop="@dimen/x3"
-            android:layout_marginBottom="@dimen/x8"
-            android:text="@string/chris_evans"
-            app:layout_constraintEnd_toStartOf="@id/text_halk"
-            app:layout_constraintStart_toEndOf="@id/text_iman"
-            app:layout_constraintTop_toBottomOf="@id/cap" />
-
-        <TextView
-            android:id="@+id/text_halk"
-            style="@style/TextActors"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/x4"
-            android:layout_marginTop="@dimen/x3"
-            android:layout_marginBottom="@dimen/x8"
-            android:text="@string/mark_ruffalo"
-            app:layout_constraintEnd_toStartOf="@id/text_tor"
-            app:layout_constraintStart_toEndOf="@id/text_cap"
-            app:layout_constraintTop_toBottomOf="@id/halk" />
-
-        <TextView
-            android:id="@+id/text_tor"
-            style="@style/TextActors"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/x4"
-            android:layout_marginTop="@dimen/x3"
-            android:layout_marginEnd="@dimen/x8"
-            android:layout_marginBottom="@dimen/x8"
-            android:text="@string/chris_hemsworth"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/text_halk"
-            app:layout_constraintTop_toBottomOf="@id/tor" />
+        </androidx.recyclerview.widget.RecyclerView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
