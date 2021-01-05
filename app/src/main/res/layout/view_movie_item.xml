@@ -3,47 +3,45 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:background="@color/background_color"
     android:id="@+id/card_view"
     style="@style/FragmentMyCardViewStyle"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/bg_the_end_move_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/bg_image_movie"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginStart="@dimen/x"
             android:layout_marginTop="@dimen/x"
             android:layout_marginEnd="@dimen/x"
             android:layout_marginBottom="@dimen/x24"
             android:scaleType="centerCrop"
-            android:src="@mipmap/the_end_move_list"
+            app:layout_constraintDimensionRatio="3:4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/pic_movie_image_in_list_dolittle"
             tools:ignore="ContentDescription" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:scaleType="fitXY"
             android:src="@drawable/ic_mask_the_end_move_list"
-            app:layout_constraintBottom_toBottomOf="@id/bg_the_end_move_list"
-            app:layout_constraintEnd_toEndOf="@id/bg_the_end_move_list"
-            app:layout_constraintStart_toStartOf="@id/bg_the_end_move_list"
-            app:layout_constraintTop_toTopOf="@id/bg_the_end_move_list"
+            app:layout_constraintBottom_toBottomOf="@id/bg_image_movie"
+            app:layout_constraintEnd_toEndOf="@id/bg_image_movie"
+            app:layout_constraintStart_toStartOf="@id/bg_image_movie"
+            app:layout_constraintTop_toTopOf="@id/bg_image_movie"
             tools:ignore="ContentDescription" />
 
         <TextView
-            android:id="@+id/fr_rectangl_13"
+            android:id="@+id/age_rating"
             style="@style/BlackRectangle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,30 +50,30 @@
             android:background="@mipmap/rectangle"
             android:gravity="center_vertical|center_horizontal"
             android:text="@string/_13"
-            android:textSize="@dimen/_8sp"
             app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintStart_toStartOf="@id/bg_the_end_move_list"
-            app:layout_constraintTop_toTopOf="@id/bg_the_end_move_list" />
+            app:layout_constraintStart_toStartOf="@id/bg_image_movie"
+            app:layout_constraintTop_toTopOf="@id/bg_image_movie" />
 
         <ImageView
+            android:id="@+id/favorites"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x4"
             android:layout_marginEnd="@dimen/x3"
-            app:layout_constraintEnd_toEndOf="@id/bg_the_end_move_list"
-            app:layout_constraintTop_toTopOf="@id/bg_the_end_move_list"
+            app:layout_constraintEnd_toEndOf="@id/bg_image_movie"
+            app:layout_constraintTop_toTopOf="@id/bg_image_movie"
             app:srcCompat="@drawable/ic_like"
             tools:ignore="ContentDescription"/>
 
         <TextView
-            android:id="@+id/fr_tag"
+            android:id="@+id/genre"
             style="@style/RobotoPink8"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/x3"
             android:layout_marginBottom="@dimen/x11"
-            app:layout_constraintBottom_toBottomOf="@id/bg_the_end_move_list"
-            app:layout_constraintStart_toStartOf="@id/bg_the_end_move_list" />
+            app:layout_constraintBottom_toBottomOf="@id/bg_image_movie"
+            app:layout_constraintStart_toStartOf="@id/bg_image_movie" />
 
 
         <ru.spb.yakovlev.ratingbarsvg.ui.custom.RatingBarSvg
@@ -93,9 +91,9 @@
             app:drawableHeight="@dimen/x4"
             app:drawableWidth="@dimen/x4"
             app:innerPadding="@dimen/x"
-            app:layout_constraintBottom_toBottomOf="@id/bg_the_end_move_list"
+            app:layout_constraintBottom_toBottomOf="@id/bg_image_movie"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fr_tag" />
+            app:layout_constraintTop_toBottomOf="@+id/genre" />
 
         <TextView
             android:id="@+id/fr_text_reviews"
@@ -107,9 +105,10 @@
             android:layout_marginBottom="@dimen/x4"
             android:text="@string/_125_reviews"
             app:layout_constraintStart_toEndOf="@id/fr_ratingbar"
-            app:layout_constraintTop_toBottomOf="@id/fr_tag" />
+            app:layout_constraintTop_toBottomOf="@id/genre" />
 
         <TextView
+            android:id="@+id/name_movie"
             style="@style/RobotoBlack14White"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -117,9 +116,10 @@
             android:layout_marginTop="@dimen/x4"
             android:text="@string/fr_avengers_end_game"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bg_the_end_move_list" />
+            app:layout_constraintTop_toBottomOf="@id/bg_image_movie" />
 
         <TextView
+            android:id="@+id/duration"
             style="@style/RobotoBlack8Grey"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
