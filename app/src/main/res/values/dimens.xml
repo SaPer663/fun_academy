@@ -15,4 +15,6 @@
     <dimen name="_12sp">12sp</dimen>
     <dimen name="_14sp">14sp</dimen>
     <dimen name="_40sp">40sp</dimen>
+    <dimen name="x149">298dp</dimen>
+    <dimen name="x28">56dp</dimen>
 </resources>
