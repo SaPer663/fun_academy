@@ -1,22 +1,19 @@
 package com.example.android.funacademy
 
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.android.funacademy.databinding.ViewHolderActorBinding
+import com.example.android.funacademy.databinding.ViewActorItemBinding
 import com.example.android.funacademy.models.Actor
-import com.example.android.funacademy.models.Movie
 
 class ActorsAdapter : RecyclerView.Adapter<ActorViewHolder>() {
 
-    private  var actors: List<Actor> = listOf()
+    private var actors: List<Actor> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActorViewHolder {
-        val view = ViewHolderActorBinding
+        val view = ViewActorItemBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
         return ActorViewHolder(view)
     }
@@ -29,12 +26,14 @@ class ActorsAdapter : RecyclerView.Adapter<ActorViewHolder>() {
         return actors.size
     }
 
-    fun bindActors(newMovies: List<Movie>) {
-       // actors = newMovies
+    fun bindActors(newActors: List<Actor>) {
+        actors = newActors
     }
 
 }
-class ActorViewHolder(viewHolderActorBinding: ViewHolderActorBinding) : RecyclerView.ViewHolder(viewHolderActorBinding.root) {
+
+class ActorViewHolder(viewHolderActorBinding: ViewActorItemBinding) :
+    RecyclerView.ViewHolder(viewHolderActorBinding.root) {
 
     private val imageActor: ImageView = viewHolderActorBinding.imageActor
     private val fullNamesActor: TextView = viewHolderActorBinding.fullNamesActor
