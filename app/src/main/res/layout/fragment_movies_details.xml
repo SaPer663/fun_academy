@@ -16,14 +16,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.37" />
+            app:layout_constraintGuide_begin="@dimen/x149" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/top_menu_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.07" />
+            app:layout_constraintGuide_begin="@dimen/x28" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/start_vertical_guideline"
@@ -37,12 +37,12 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
-            android:src="@mipmap/background"
             app:layout_constraintBottom_toTopOf="@id/background_guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription"
+            tools:src="@mipmap/background" />
 
         <ImageView
             android:layout_width="0dp"
@@ -79,10 +79,10 @@
             android:layout_marginBottom="@dimen/x6"
             android:background="@mipmap/rectangle"
             android:gravity="center_vertical"
-            android:text="@string/_13"
             app:layout_constraintBottom_toTopOf="@id/name"
             app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintStart_toEndOf="@id/start_vertical_guideline" />
+            app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
+            tools:text="@string/_13" />
 
         <TextView
             android:id="@+id/name"
@@ -91,13 +91,13 @@
             android:layout_marginTop="@dimen/x4"
             android:layout_marginEnd="@dimen/x8"
             android:fontFamily="@font/roboto_black"
-            android:text="@string/avengers_end_game"
             android:textColor="@color/white_light"
             android:textSize="@dimen/_40sp"
             app:layout_constraintBottom_toBottomOf="@id/background_guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
-            app:layout_constraintTop_toTopOf="@id/background_guideline" />
+            app:layout_constraintTop_toTopOf="@id/background_guideline"
+            tools:text="@string/avengers_end_game" />
 
         <TextView
             android:id="@+id/tag"
@@ -106,69 +106,29 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x2"
             android:layout_marginEnd="@dimen/x8"
-            android:text="@string/tag_text"
             android:textColor="@color/pink"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
-            app:layout_constraintTop_toBottomOf="@id/name" />
+            app:layout_constraintTop_toBottomOf="@id/name"
+            tools:text="@string/tag_text" />
 
-        <ImageView
-            android:id="@+id/full_star_1"
+        <ru.spb.yakovlev.ratingbarsvg.ui.custom.RatingBarSvg
+            android:id="@+id/ratingbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x4"
-            android:src="@drawable/ic_star_icon"
+            android:numStars="5"
+            android:progressBackgroundTint="@color/my_grey"
+            android:progressDrawable="@drawable/ratingbar_svg_selector"
+            android:progressTint="@color/pink"
+            android:rating="4"
+            android:secondaryProgressTint="@color/my_grey"
+            app:drawableHeight="@dimen/x6"
+            app:drawableWidth="13dp"
+            app:innerPadding="@dimen/x2"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
-            app:layout_constraintTop_toBottomOf="@id/tag"
-            app:tint="@color/pink"
-            tools:ignore="ContentDescription" />
+            app:layout_constraintTop_toBottomOf="@id/tag" />
 
-        <ImageView
-            android:id="@+id/full_star_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/x2"
-            android:layout_marginTop="@dimen/x4"
-            android:src="@drawable/ic_star_icon"
-            app:layout_constraintStart_toEndOf="@id/full_star_1"
-            app:layout_constraintTop_toBottomOf="@id/tag"
-            app:tint="@color/pink"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/full_star_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/x2"
-            android:layout_marginTop="@dimen/x4"
-            android:src="@drawable/ic_star_icon"
-            app:layout_constraintStart_toEndOf="@id/full_star_2"
-            app:layout_constraintTop_toBottomOf="@id/tag"
-            app:tint="@color/pink"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/full_star_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/x2"
-            android:layout_marginTop="@dimen/x4"
-            android:src="@drawable/ic_star_icon"
-            app:layout_constraintStart_toEndOf="@id/full_star_3"
-            app:layout_constraintTop_toBottomOf="@id/tag"
-            app:tint="@color/pink"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/empty_star"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/x2"
-            android:layout_marginTop="@dimen/x4"
-            android:src="@drawable/ic_star_icon"
-            app:layout_constraintStart_toEndOf="@id/full_star_4"
-            app:layout_constraintTop_toBottomOf="@id/tag"
-            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/text_reviews"
@@ -177,11 +137,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/x4"
             android:layout_marginTop="@dimen/x2"
-            android:text="@string/_125_reviews"
             android:textAllCaps="true"
             android:textColor="@color/my_grey"
-            app:layout_constraintStart_toEndOf="@id/empty_star"
-            app:layout_constraintTop_toBottomOf="@id/tag" />
+            app:layout_constraintStart_toEndOf="@id/ratingbar"
+            app:layout_constraintTop_toBottomOf="@id/tag"
+            tools:text="@string/_125_reviews" />
 
         <TextView
             android:id="@+id/storyline_name"
@@ -203,11 +163,11 @@
             android:layout_marginEnd="@dimen/x8"
             android:alpha="0.75"
             android:gravity="start"
-            android:text="@string/storyline_text"
             android:textColor="@color/text_white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
-            app:layout_constraintTop_toBottomOf="@id/storyline_name" />
+            app:layout_constraintTop_toBottomOf="@id/storyline_name"
+            tools:text="@string/storyline_text" />
 
         <TextView
             android:id="@+id/cast_name"
@@ -222,17 +182,21 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_actors"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/x8"
             android:layout_marginTop="@dimen/x4"
-            android:layout_marginBottom="@dimen/x8"
+            android:layout_marginEnd="@dimen/x8"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cast_name"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:listitem="@layout/view_holder_actor">
+            app:layout_constraintVertical_bias="0.0"
+            tools:listitem="@layout/view_actor_item">
 
         </androidx.recyclerview.widget.RecyclerView>
 
