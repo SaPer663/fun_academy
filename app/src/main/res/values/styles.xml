@@ -64,15 +64,17 @@
     </style>
 
     <style name="FragmentMyCardViewStyle" parent="Theme.AppCompat.Light">
-        <item name="cardCornerRadius">@dimen/x4</item>
+        <item name="cardCornerRadius">@dimen/x8</item>
         <item name="cardElevation">@dimen/x</item>
-        <item name="cardBackgroundColor">@color/background_color</item>
+        <item name="cardBackgroundColor">@color/bg_color_bottom_cardview</item>
+
+        <item name="cardUseCompatPadding">true</item>
     </style>
 
     <style name="MyRecyclerView" parent="Theme.Design.Light">
         <item name="android:layout_marginTop">@dimen/x51</item>
-        <item name="android:layout_marginStart">@dimen/x6</item>
-        <item name="android:layout_marginEnd">@dimen/x6</item>
+        <item name="android:layout_marginStart">@dimen/x3</item>
+        <item name="android:layout_marginEnd">@dimen/x3</item>
     </style>
 
 </resources>
