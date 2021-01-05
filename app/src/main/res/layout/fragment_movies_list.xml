@@ -1,34 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color">
 
-    <FrameLayout
+    <TextView
+        android:id="@+id/tv_text"
+        style="@style/RobotoBlack14White"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x8"
+        android:layout_marginTop="@dimen/x27"
+        android:drawablePadding="@dimen/x4"
+        android:text="@string/movies_list"
+        app:drawableStartCompat="@drawable/ic_combined_shape" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_movies"
+        style="@style/MyRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            style="@style/RobotoBlack14White"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/x8"
-            android:layout_marginTop="@dimen/x27"
-            android:drawablePadding="@dimen/x4"
-            android:text="@string/movies_list"
-            app:drawableStartCompat="@drawable/ic_combined_shape" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_movies"
-            style="@style/MyRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/view_movie_item"/>
 
 
-
-    </FrameLayout>
-
-</ScrollView>
+</FrameLayout>
