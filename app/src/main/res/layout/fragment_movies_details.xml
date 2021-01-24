@@ -117,17 +117,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x4"
-            android:numStars="5"
             android:progressBackgroundTint="@color/my_grey"
             android:progressDrawable="@drawable/ratingbar_svg_selector"
             android:progressTint="@color/pink"
-            android:rating="4"
             android:secondaryProgressTint="@color/my_grey"
             app:drawableHeight="@dimen/x6"
-            app:drawableWidth="13dp"
+            app:drawableWidth="@dimen/y13"
             app:innerPadding="@dimen/x2"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
-            app:layout_constraintTop_toBottomOf="@id/tag" />
+            app:layout_constraintTop_toBottomOf="@id/tag"
+            tools:numStars="5"
+            tools:rating="4" />
 
 
         <TextView
@@ -182,21 +182,21 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_actors"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_marginStart="@dimen/x8"
             android:layout_marginTop="@dimen/x4"
             android:layout_marginEnd="@dimen/x8"
-            android:layout_marginBottom="20dp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginBottom="@dimen/x10"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cast_name"
             app:layout_constraintVertical_bias="0.0"
-            tools:listitem="@layout/view_actor_item">
+            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/view_actor_item"
+            tools:orientation="horizontal">
 
         </androidx.recyclerview.widget.RecyclerView>
 
