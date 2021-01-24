@@ -71,7 +71,7 @@ class MovieViewHolder(
         "${movie.durationMin}min".also { durationMin.text = it }
         ageRating.text = movie.ageRating
         if (movie.favorite) {
-            favorites.setImageResource(R.color.pink)
+            favorites.setImageResource(R.drawable.ic_like_favorite)
         }
     }
 }
