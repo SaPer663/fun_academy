@@ -6,11 +6,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.funacademy.databinding.ViewActorItemBinding
+import com.example.android.funacademy.domain.MoviesDataSource
 import com.example.android.funacademy.models.Actor
 
-class ActorsAdapter : RecyclerView.Adapter<ActorViewHolder>() {
+class ActorsAdapter(id: Int) : RecyclerView.Adapter<ActorViewHolder>() {
 
-    private var actors: List<Actor> = listOf()
+    private var actors: List<Actor> = MoviesDataSource().getMovieById(id).actors
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActorViewHolder {
         val view = ViewActorItemBinding
@@ -25,11 +26,6 @@ class ActorsAdapter : RecyclerView.Adapter<ActorViewHolder>() {
     override fun getItemCount(): Int {
         return actors.size
     }
-
-    fun bindActors(newActors: List<Actor>) {
-        actors = newActors
-    }
-
 }
 
 class ActorViewHolder(viewHolderActorBinding: ViewActorItemBinding) :
