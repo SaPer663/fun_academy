@@ -16,12 +16,12 @@ class FragmentMoviesDetails : Fragment(R.layout.fragment_movies_details) {
     private lateinit var adapter: ActorsAdapter
     private var tvBack: TextView? = null
     private var fragmentMoveDetailsBinding: FragmentMoviesDetailsBinding? = null
+    private val binding get() = fragmentMoveDetailsBinding!!
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = ActorsAdapter()
-        val binding = FragmentMoviesDetailsBinding.bind(view)
-        fragmentMoveDetailsBinding = binding
+        adapter = ActorsAdapter(this.arguments?.getInt(ARGS_MOVIE) ?: 0)
+        fragmentMoveDetailsBinding = FragmentMoviesDetailsBinding.bind(view)
         val recycler: RecyclerView = binding.rvActors
         recycler.layoutManager =
             LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
@@ -29,27 +29,7 @@ class FragmentMoviesDetails : Fragment(R.layout.fragment_movies_details) {
         tvBack = binding.back.apply {
             setOnClickListener { onClickBack() }
         }
-        val movie: Movie = MoviesDataSource().getMovieById(arguments?.getInt(ARGS_MOVIE))
-        binding.backgroundImage.setImageResource(movie.picForDetails)
-        binding.rectangl13.text = movie.ageRating
-        binding.name.text = movie.name
-        binding.tag.setText(movie.genre)
-        binding.ratingbar.rating = movie.Rating
-        "${movie.numOfRatings} Reviews".also { binding.textReviews.text = it }
-        binding.storylineName.setText(movie.storyline)
-    }
-
-    override fun onStart() {
-        super.onStart()
-        updateData()
-    }
-
-    private fun updateData() {
-        adapter.bindActors(
-            MoviesDataSource()
-                .getMovieById(this.arguments?.getInt(ARGS_MOVIE)).actors
-        )
-        adapter.notifyDataSetChanged()
+        fillViews(obtainFilm())
     }
 
     override fun onDestroyView() {
@@ -62,6 +42,20 @@ class FragmentMoviesDetails : Fragment(R.layout.fragment_movies_details) {
             popBackStack()
         }
     }
+
+    private fun fillViews(movie: Movie) {
+        binding.apply {
+            backgroundImage.setImageResource(movie.picForDetails)
+            rectangl13.text = movie.ageRating
+            name.text = movie.name
+            tag.setText(movie.genre)
+            ratingbar.rating = movie.Rating
+            "${movie.numOfRatings} Reviews".also { textReviews.text = it }
+            storylineName.setText(movie.storyline)
+        }
+    }
+
+    private fun obtainFilm() = MoviesDataSource().getMovieById(this.arguments?.getInt(ARGS_MOVIE))
 
     companion object {
         private const val ARGS_MOVIE = "ARGS_MOVIE"
