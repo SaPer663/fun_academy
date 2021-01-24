@@ -13,19 +13,21 @@ import com.example.android.funacademy.models.Movie
 
 class FragmentMoviesDetails : Fragment(R.layout.fragment_movies_details) {
 
-    private lateinit var adapter: ActorsAdapter
+    private lateinit var actorsAdapter: ActorsAdapter
     private var tvBack: TextView? = null
     private var fragmentMoveDetailsBinding: FragmentMoviesDetailsBinding? = null
     private val binding get() = fragmentMoveDetailsBinding!!
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = ActorsAdapter(this.arguments?.getInt(ARGS_MOVIE) ?: 0)
+        actorsAdapter = ActorsAdapter(this.arguments?.getInt(ARGS_MOVIE) ?: 0)
         fragmentMoveDetailsBinding = FragmentMoviesDetailsBinding.bind(view)
         val recycler: RecyclerView = binding.rvActors
-        recycler.layoutManager =
-            LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
-        recycler.adapter = adapter
+        recycler.apply {
+            layoutManager =
+                LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
+            adapter = actorsAdapter
+        }
         tvBack = binding.back.apply {
             setOnClickListener { onClickBack() }
         }

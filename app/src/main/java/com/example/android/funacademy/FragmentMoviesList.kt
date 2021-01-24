@@ -9,16 +9,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android.funacademy.databinding.FragmentMoviesListBinding
 import com.example.android.funacademy.domain.MoviesDataSource
 
-class FragmentMoviesList : Fragment(R.layout.fragment_movies_list), Listener {
+class FragmentMoviesList : Fragment(R.layout.fragment_movies_list), ListenerMoviesAdapter {
 
     private lateinit var adapter: MoviesAdapter
     private var fragmentMoviesListBinding: FragmentMoviesListBinding? = null
+    private val binding get() = fragmentMoviesListBinding!!
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = MoviesAdapter(this)
-        val binding = FragmentMoviesListBinding.bind(view)
-        fragmentMoviesListBinding = binding
+        fragmentMoviesListBinding = FragmentMoviesListBinding.bind(view)
         val recycler: RecyclerView = binding.rvMovies
         recycler.layoutManager = GridLayoutManager(requireContext(), 2)
         recycler.adapter = adapter
@@ -39,7 +39,7 @@ class FragmentMoviesList : Fragment(R.layout.fragment_movies_list), Listener {
         super.onDestroyView()
     }
 
-    override fun clickFragment(id: Int) {
+    override fun clickItemMovieList(id: Int) {
         activity?.supportFragmentManager?.commit {
             setReorderingAllowed(true)
             addToBackStack(null)

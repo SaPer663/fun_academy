@@ -9,14 +9,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android.funacademy.databinding.ViewMovieItemBinding
 import com.example.android.funacademy.models.Movie
 
-class MoviesAdapter(private val clickListener: Listener) : RecyclerView.Adapter<MovieViewHolder>() {
+class MoviesAdapter(private val clickListener: ListenerMoviesAdapter) :
+    RecyclerView.Adapter<MovieViewHolder>() {
 
     private var movies: List<Movie> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val view = ViewMovieItemBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
-        return MovieViewHolder(view, clickListener, movies)
+        return MovieViewHolder(view, clickListener)
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
@@ -33,14 +34,13 @@ class MoviesAdapter(private val clickListener: Listener) : RecyclerView.Adapter<
 
 }
 
-interface Listener {
-    fun clickFragment(id: Int)
+interface ListenerMoviesAdapter {
+    fun clickItemMovieList(id: Int)
 }
 
 class MovieViewHolder(
     viewHolderMovieBinding: ViewMovieItemBinding,
-    clickListener: Listener,
-    movies: List<Movie>
+    clickListener: ListenerMoviesAdapter
 ) :
     RecyclerView.ViewHolder(viewHolderMovieBinding.root) {
 
@@ -52,19 +52,17 @@ class MovieViewHolder(
     private val reviews: TextView = viewHolderMovieBinding.frTextReviews
     private val durationMin: TextView = viewHolderMovieBinding.duration
     private val ageRating: TextView = viewHolderMovieBinding.ageRating
+    private var idMovie: Int = 0
 
     init {
         viewHolderMovieBinding.root.setOnClickListener {
-            val position = adapterPosition
-            if (position != RecyclerView.NO_POSITION) {
-                clickListener.clickFragment(movies[position].id)
-            }
+            clickListener.clickItemMovieList(idMovie)
         }
     }
 
-
     fun onBind(movie: Movie) {
 
+        idMovie = movie.id
         name.text = movie.name
         genre.setText(movie.genre)
         bgImageMovie.setImageResource(movie.picForList)
@@ -76,5 +74,4 @@ class MovieViewHolder(
             favorites.setImageResource(R.color.pink)
         }
     }
-
 }

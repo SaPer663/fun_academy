@@ -62,7 +62,8 @@
             app:layout_constraintEnd_toEndOf="@id/bg_image_movie"
             app:layout_constraintTop_toTopOf="@id/bg_image_movie"
             app:srcCompat="@drawable/ic_like"
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription"
+            tools:tint="@color/pink"/>
 
         <TextView
             android:id="@+id/genre"
