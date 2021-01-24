@@ -17,4 +17,7 @@
     <dimen name="_40sp">40sp</dimen>
     <dimen name="x149">298dp</dimen>
     <dimen name="x28">56dp</dimen>
+    <dimen name="y13">13dp</dimen>
+    <dimen name="x44">88dp</dimen>
+    <dimen name="x10">20dp</dimen>
 </resources>

@@ -22,7 +22,7 @@
         style="@style/MyRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/view_movie_item"/>
+        tools:listitem="@layout/view_movie_item" />
 
 
 </FrameLayout>
