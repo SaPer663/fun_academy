@@ -22,8 +22,7 @@ class FragmentMoviesDetails : Fragment(R.layout.fragment_movies_details) {
         super.onViewCreated(view, savedInstanceState)
         actorsAdapter = ActorsAdapter(this.arguments?.getInt(ARGS_MOVIE) ?: 0)
         fragmentMoveDetailsBinding = FragmentMoviesDetailsBinding.bind(view)
-        val recycler: RecyclerView = binding.rvActors
-        recycler.apply {
+        binding.rvActors.apply {
             layoutManager =
                 LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
             adapter = actorsAdapter

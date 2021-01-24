@@ -11,17 +11,18 @@ import com.example.android.funacademy.domain.MoviesDataSource
 
 class FragmentMoviesList : Fragment(R.layout.fragment_movies_list), ListenerMoviesAdapter {
 
-    private lateinit var adapter: MoviesAdapter
+    private lateinit var moviesAdapter: MoviesAdapter
     private var fragmentMoviesListBinding: FragmentMoviesListBinding? = null
     private val binding get() = fragmentMoviesListBinding!!
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = MoviesAdapter(this)
+        moviesAdapter = MoviesAdapter(this)
         fragmentMoviesListBinding = FragmentMoviesListBinding.bind(view)
-        val recycler: RecyclerView = binding.rvMovies
-        recycler.layoutManager = GridLayoutManager(requireContext(), 2)
-        recycler.adapter = adapter
+        binding.rvMovies.apply {
+            layoutManager = GridLayoutManager(requireContext(), 2)
+            adapter = moviesAdapter
+        }
     }
 
     override fun onStart() {
@@ -30,8 +31,8 @@ class FragmentMoviesList : Fragment(R.layout.fragment_movies_list), ListenerMovi
     }
 
     private fun updateData() {
-        adapter.bindMovies(MoviesDataSource().getMovies())
-        adapter.notifyDataSetChanged()
+        moviesAdapter.bindMovies(MoviesDataSource().getMovies())
+        moviesAdapter.notifyDataSetChanged()
     }
 
     override fun onDestroyView() {
