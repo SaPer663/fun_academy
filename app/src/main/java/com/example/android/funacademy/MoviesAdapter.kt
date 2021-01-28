@@ -56,7 +56,10 @@ class MovieViewHolder(
 
     init {
         viewHolderMovieBinding.root.setOnClickListener {
-            clickListener.clickItemMovieList(idMovie)
+            val position = adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                clickListener.clickItemMovieList(idMovie)
+            }
         }
     }
 
