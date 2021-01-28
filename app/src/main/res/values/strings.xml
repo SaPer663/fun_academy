@@ -7,7 +7,10 @@
     <string name="chris_evans">Chris Evans</string>
     <string name="robert_downey_u00a0jr"><![CDATA[Robert Downey Jr.]]></string>
     <string name="cast">Cast</string>
-    <string name="storyline_text">After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos\' actions and restore balance to the universe.</string>
+    <string name="storyline_text">After the devastating events of Avengers: Infinity War,
+        the universe is in ruins. With the help of remaining allies,
+        the Avengers assemble once more in order to reverse Thanos\' actions and restore
+        balance to the universe.</string>
     <string name="storyline">Storyline</string>
     <string name="_125_reviews">125 Reviews</string>
     <string name="tag_text">Action, Adventure, Fantasy</string>
@@ -16,4 +19,31 @@
     <string name="_137_min">137 min</string>
     <string name="fr_avengers_end_game">Avengers: End Game</string>
     <string name="movies_list">Movies list</string>
+    <string name="dolitlle_storyline">A physician who can talk to animals embarks on an adventure
+        to find a legendary island with a young apprentice and a crew of strange pets.</string>
+    <string name="tenet_genre">Action, Sci-Fi, Thriller </string>
+    <string name="bl_wid_genre">Action, Adventure, Sci-Fi</string>
+    <string name="underwater_storyline">A crew of oceanic researchers working for a deep sea
+        drilling company try to get to safety after a mysterious earthquake devastates their
+        deepwater research and drilling facility located at the bottom of the
+        Mariana Trench.</string>
+    <string name="the_call_of_the_wild_genre">Adventure, Drama, Family</string>
+    <string name="the_call_of_the_wild_storyline">A sled dog struggles for survival in the wilds
+        of the Yukon.</string>
+    <string name="last_christmas_genre">Comedy, Drama, Romance</string>
+    <string name="last_christmas_storyline">Kate is a young woman subscribed to bad decisions.
+        Working as an elf in a year round Christmas store is not good for the wannabe singer.
+        However, she meets Tom there. Her life takes a new turn.
+        For Kate, it seems too good to be true.</string>
+    <string name="the_invisible_guest_genre">Crime, Drama, Mystery</string>
+    <string name="the_invisible_guest_storyline">A successful entrepreneur accused of murder and
+        a witness preparation expert have less than three hours to come up with
+        an impregnable defense.</string>
+    <string name="fantasy_island_genre">Action, Adventure, Fantasy</string>
+    <string name="fantasy_island_storyline">When the owner and operator of a luxurious island
+        invites a collection of guests to live out their most elaborate fantasies in
+        relative seclusion, chaos quickly descends.</string>
+
+
+
 </resources>
