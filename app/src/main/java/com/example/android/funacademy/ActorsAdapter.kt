@@ -6,12 +6,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.funacademy.databinding.ViewActorItemBinding
-import com.example.android.funacademy.domain.MoviesDataSource
 import com.example.android.funacademy.models.Actor
 
-class ActorsAdapter(id: Int) : RecyclerView.Adapter<ActorViewHolder>() {
-
-    private var actors: List<Actor> = MoviesDataSource().getMovieById(id).actors
+class ActorsAdapter(private val actors: List<Actor>) : RecyclerView.Adapter<ActorViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActorViewHolder {
         val view = ViewActorItemBinding

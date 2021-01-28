@@ -20,7 +20,7 @@ class FragmentMoviesDetails : Fragment(R.layout.fragment_movies_details) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        actorsAdapter = ActorsAdapter(this.arguments?.getInt(ARGS_MOVIE) ?: 0)
+        actorsAdapter = ActorsAdapter(obtainFilm().actors)
         fragmentMoveDetailsBinding = FragmentMoviesDetailsBinding.bind(view)
         binding.rvActors.apply {
             layoutManager =
