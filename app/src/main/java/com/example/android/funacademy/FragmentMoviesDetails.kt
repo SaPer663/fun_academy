@@ -8,8 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.funacademy.databinding.FragmentMoviesDetailsBinding
-import com.example.android.funacademy.domain.MoviesDataSource
-import com.example.android.funacademy.models.Movie
+import com.example.android.funacademy.model.Movie
 
 class FragmentMoviesDetails : Fragment(R.layout.fragment_movies_details) {
 
