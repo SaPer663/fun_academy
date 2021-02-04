@@ -9,8 +9,9 @@ import com.bumptech.glide.Glide
 import com.example.android.funacademy.databinding.ViewActorItemBinding
 import com.example.android.funacademy.model.Actor
 
-class ActorsAdapter(private val actors: List<Actor>) : RecyclerView.Adapter<ActorViewHolder>() {
+class ActorsAdapter(receivedActors: List<Actor>?) : RecyclerView.Adapter<ActorViewHolder>() {
 
+    private val actors = receivedActors ?: listOf()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActorViewHolder {
         val view = ViewActorItemBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)

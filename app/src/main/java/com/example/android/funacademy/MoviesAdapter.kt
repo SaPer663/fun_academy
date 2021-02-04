@@ -7,7 +7,9 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.android.funacademy.data.getListGenre
 import com.example.android.funacademy.databinding.ViewMovieItemBinding
+import com.example.android.funacademy.model.Genre
 import com.example.android.funacademy.model.Movie
 
 class MoviesAdapter(private val clickListener: ListenerMoviesAdapter) :
@@ -66,15 +68,17 @@ class MovieViewHolder(
 
     fun onBind(movie: Movie) {
 
+        idMovie = movie.id
         name.text = movie.title
-        genre.text = movie.genres.joinToString(separator = ", ")
-        Glide.with(context)
+        genre.text = getListGenre(movie.genres).joinToString()
+        Glide
+            .with(context)
             .load(movie.imageUrl)
             .into(bgImageMovie)
         ratingBar.rating = movie.rating.toFloat()
         "${movie.reviewCount} Reviews".also { reviews.text = it }
         "${movie.runningTime}min".also { durationMin.text = it }
-        "+${movie.pgAge}".also { ageRating.text = it }
+        "${movie.pgAge}+".also { ageRating.text = it }
         if (movie.isLiked) {
             favorites.setImageResource(R.drawable.ic_like_favorite)
         }

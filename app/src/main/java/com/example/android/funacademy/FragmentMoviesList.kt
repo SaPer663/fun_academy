@@ -1,18 +1,16 @@
 package com.example.android.funacademy
 
-import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.android.funacademy.data.loadMovies
 import com.example.android.funacademy.databinding.FragmentMoviesListBinding
+import com.example.android.funacademy.model.Movie
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class FragmentMoviesList : Fragment(R.layout.fragment_movies_list), ListenerMoviesAdapter {
 
@@ -33,12 +31,12 @@ class FragmentMoviesList : Fragment(R.layout.fragment_movies_list), ListenerMovi
 
     override fun onStart() {
         super.onStart()
-        scope.launch{ context?.let { updateData(it) } }
+        scope.launch { context?.let { updateData(loadMovies(it)) } }
     }
 
-    private suspend fun updateData(context: Context) = withContext(Dispatchers.IO) {
-        adapter.bindMovies(loadMovies(context))
-        adapter.notifyDataSetChanged()
+    private fun updateData(data: List<Movie>) {
+        moviesAdapter.bindMovies(data)
+        moviesAdapter.notifyDataSetChanged()
     }
 
     override fun onDestroyView() {
