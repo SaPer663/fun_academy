@@ -1,7 +1,9 @@
 package com.example.android.funacademy.model
 
-import java.io.Serializable
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Movie(
     val id: Int,
     val title: String,
@@ -15,4 +17,4 @@ data class Movie(
     val genres: List<Genre>,
     val storyLine: String,
     val actors: List<Actor>
-) : Serializable
+) : Parcelable
