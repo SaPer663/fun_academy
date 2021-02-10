@@ -7,9 +7,7 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.android.funacademy.data.getListGenre
 import com.example.android.funacademy.databinding.ViewMovieItemBinding
-import com.example.android.funacademy.model.Genre
 import com.example.android.funacademy.model.Movie
 
 class MoviesAdapter(private val clickListener: ListenerMoviesAdapter) :
@@ -33,6 +31,7 @@ class MoviesAdapter(private val clickListener: ListenerMoviesAdapter) :
 
     fun bindMovies(newMovies: List<Movie>) {
         movies = newMovies
+        notifyDataSetChanged()
     }
 
 }
@@ -70,7 +69,7 @@ class MovieViewHolder(
 
         idMovie = movie.id
         name.text = movie.title
-        genre.text = getListGenre(movie.genres).joinToString()
+        genre.text = movie.genres.joinToString { it.name }
         Glide
             .with(context)
             .load(movie.imageUrl)
