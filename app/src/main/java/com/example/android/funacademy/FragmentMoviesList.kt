@@ -10,6 +10,7 @@ import com.example.android.funacademy.databinding.FragmentMoviesListBinding
 import com.example.android.funacademy.model.Movie
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
 class FragmentMoviesList : Fragment(R.layout.fragment_movies_list), ListenerMoviesAdapter {
@@ -36,12 +37,16 @@ class FragmentMoviesList : Fragment(R.layout.fragment_movies_list), ListenerMovi
 
     private fun updateData(data: List<Movie>) {
         moviesAdapter.bindMovies(data)
-        moviesAdapter.notifyDataSetChanged()
     }
 
     override fun onDestroyView() {
         fragmentMoviesListBinding = null
         super.onDestroyView()
+    }
+
+    override fun onDestroy() {
+        scope.cancel()
+        super.onDestroy()
     }
 
     override fun clickItemMovieList(id: Int) {
