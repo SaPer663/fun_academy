@@ -177,6 +177,7 @@
             android:layout_marginTop="@dimen/x12"
             android:text="@string/cast"
             android:textColor="@color/white_light"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@id/start_vertical_guideline"
             app:layout_constraintTop_toBottomOf="@id/storyline" />
 
@@ -188,6 +189,7 @@
             android:layout_marginTop="@dimen/x4"
             android:layout_marginEnd="@dimen/x8"
             android:layout_marginBottom="@dimen/x10"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
