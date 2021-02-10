@@ -8,6 +8,7 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/image_actor"
+        style="@style/ImageView.MovieDetails.CastAvatar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/x44"
         android:scaleType="centerCrop"
