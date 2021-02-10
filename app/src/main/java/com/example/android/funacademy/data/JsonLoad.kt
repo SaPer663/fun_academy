@@ -87,9 +87,3 @@ internal fun parseMovies(
 private fun <T : Any> T?.orThrow(createThrowable: () -> Throwable): T {
     return this ?: throw createThrowable()
 }
-
-internal fun getListGenre(genres: List<Genre>): MutableList<String> {
-    val result = mutableListOf<String>()
-    genres.forEach { result.add(it.name) }
-    return result
-}
