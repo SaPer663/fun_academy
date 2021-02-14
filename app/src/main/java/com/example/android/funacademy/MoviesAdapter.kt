@@ -6,8 +6,9 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.android.funacademy.databinding.ViewMovieItemBinding
-import com.example.android.funacademy.models.Movie
+import com.example.android.funacademy.model.Movie
 
 class MoviesAdapter(private val clickListener: ListenerMoviesAdapter) :
     RecyclerView.Adapter<MovieViewHolder>() {
@@ -30,6 +31,7 @@ class MoviesAdapter(private val clickListener: ListenerMoviesAdapter) :
 
     fun bindMovies(newMovies: List<Movie>) {
         movies = newMovies
+        notifyDataSetChanged()
     }
 
 }
@@ -66,15 +68,21 @@ class MovieViewHolder(
     fun onBind(movie: Movie) {
 
         idMovie = movie.id
-        name.text = movie.name
-        genre.setText(movie.genre)
-        bgImageMovie.setImageResource(movie.picForList)
-        ratingBar.rating = movie.Rating
-        "${movie.numOfRatings} Reviews".also { reviews.text = it }
-        "${movie.durationMin}min".also { durationMin.text = it }
-        ageRating.text = movie.ageRating
-        if (movie.favorite) {
+        name.text = movie.title
+        genre.text = movie.genres.joinToString { it.name }
+        Glide
+            .with(context)
+            .load(movie.imageUrl)
+            .into(bgImageMovie)
+        ratingBar.rating = movie.rating.toFloat()
+        "${movie.reviewCount} Reviews".also { reviews.text = it }
+        "${movie.runningTime}min".also { durationMin.text = it }
+        "${movie.pgAge}+".also { ageRating.text = it }
+        if (movie.isLiked) {
             favorites.setImageResource(R.drawable.ic_like_favorite)
         }
     }
 }
+
+private val RecyclerView.ViewHolder.context
+    get() = this.itemView.context

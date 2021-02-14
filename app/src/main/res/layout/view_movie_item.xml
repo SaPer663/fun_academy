@@ -63,7 +63,7 @@
             app:layout_constraintTop_toTopOf="@id/bg_image_movie"
             app:srcCompat="@drawable/ic_like"
             tools:ignore="ContentDescription"
-            tools:tint="@color/pink"/>
+            tools:tint="@color/pink" />
 
         <TextView
             android:id="@+id/genre"
@@ -127,6 +127,7 @@
             android:layout_marginBottom="@dimen/x4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_movie"
             tools:text="@string/_137_min" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

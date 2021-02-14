@@ -5,8 +5,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.android.funacademy.databinding.ViewActorItemBinding
-import com.example.android.funacademy.models.Actor
+import com.example.android.funacademy.model.Actor
 
 class ActorsAdapter(private val actors: List<Actor>) : RecyclerView.Adapter<ActorViewHolder>() {
 
@@ -30,9 +31,13 @@ class ActorViewHolder(viewHolderActorBinding: ViewActorItemBinding) :
 
     private val imageActor: ImageView = viewHolderActorBinding.imageActor
     private val fullNamesActor: TextView = viewHolderActorBinding.fullNamesActor
+    private val RecyclerView.ViewHolder.context
+        get() = this.itemView.context
 
     fun onBind(actor: Actor) {
-        imageActor.setImageResource(actor.image)
+        Glide.with(context)
+            .load(actor.imageUrl)
+            .into(imageActor)
         fullNamesActor.text = actor.name
     }
 }

@@ -5,15 +5,20 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.android.funacademy.data.loadMovies
 import com.example.android.funacademy.databinding.FragmentMoviesListBinding
-import com.example.android.funacademy.domain.MoviesDataSource
+import com.example.android.funacademy.model.Movie
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.launch
 
 class FragmentMoviesList : Fragment(R.layout.fragment_movies_list), ListenerMoviesAdapter {
 
     private lateinit var moviesAdapter: MoviesAdapter
     private var fragmentMoviesListBinding: FragmentMoviesListBinding? = null
     private val binding get() = fragmentMoviesListBinding!!
+    private lateinit var scope: CoroutineScope
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -23,20 +28,21 @@ class FragmentMoviesList : Fragment(R.layout.fragment_movies_list), ListenerMovi
             layoutManager = GridLayoutManager(requireContext(), 2)
             adapter = moviesAdapter
         }
+        scope = CoroutineScope(Dispatchers.Main)
     }
 
     override fun onStart() {
         super.onStart()
-        updateData()
+        scope.launch { context?.let { updateData(loadMovies(it)) } }
     }
 
-    private fun updateData() {
-        moviesAdapter.bindMovies(MoviesDataSource().getMovies())
-        moviesAdapter.notifyDataSetChanged()
+    private fun updateData(data: List<Movie>) {
+        moviesAdapter.bindMovies(data)
     }
 
     override fun onDestroyView() {
         fragmentMoviesListBinding = null
+        scope.cancel()
         super.onDestroyView()
     }
 
