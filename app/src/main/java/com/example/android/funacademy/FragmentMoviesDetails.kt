@@ -100,7 +100,7 @@ class FragmentMoviesDetails : Fragment(R.layout.fragment_movies_details) {
 
 }
 
-suspend fun obtainMovie(context: Context, id: Int) = withContext(Dispatchers.IO) {
+private suspend fun obtainMovie(context: Context, id: Int) = withContext(Dispatchers.IO) {
 
     loadMovies(context).find { it.id == id }
 }
