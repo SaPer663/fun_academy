@@ -18,7 +18,7 @@ class FragmentMoviesList : Fragment(R.layout.fragment_movies_list), ListenerMovi
     private lateinit var moviesAdapter: MoviesAdapter
     private var fragmentMoviesListBinding: FragmentMoviesListBinding? = null
     private val binding get() = fragmentMoviesListBinding!!
-    private val scope = CoroutineScope(Dispatchers.Main)
+    private lateinit var scope: CoroutineScope
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -28,6 +28,7 @@ class FragmentMoviesList : Fragment(R.layout.fragment_movies_list), ListenerMovi
             layoutManager = GridLayoutManager(requireContext(), 2)
             adapter = moviesAdapter
         }
+        scope = CoroutineScope(Dispatchers.Main)
     }
 
     override fun onStart() {
@@ -41,12 +42,8 @@ class FragmentMoviesList : Fragment(R.layout.fragment_movies_list), ListenerMovi
 
     override fun onDestroyView() {
         fragmentMoviesListBinding = null
-        super.onDestroyView()
-    }
-
-    override fun onDestroy() {
         scope.cancel()
-        super.onDestroy()
+        super.onDestroyView()
     }
 
     override fun clickItemMovieList(id: Int) {
