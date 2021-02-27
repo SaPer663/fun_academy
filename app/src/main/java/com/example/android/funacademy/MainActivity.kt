@@ -1,10 +1,9 @@
 package com.example.android.funacademy
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.replace
+import com.example.android.funacademy.features.movies.FragmentMoviesList
 
 class MainActivity : AppCompatActivity() {
 
