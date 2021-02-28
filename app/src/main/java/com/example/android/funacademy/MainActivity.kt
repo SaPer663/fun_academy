@@ -3,7 +3,7 @@ package com.example.android.funacademy
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.replace
-import com.example.android.funacademy.features.movies.FragmentMoviesList
+import com.example.android.funacademy.features.movies.FragmentMovieList
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .apply {
-                    replace<FragmentMoviesList>(R.id.fragments_container)
+                    replace<FragmentMovieList>(R.id.fragments_container)
                     commit()
                 }
         }

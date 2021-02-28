@@ -85,7 +85,7 @@ internal class JsonLoad(private val context: Context) {
         }
     }
 
-    suspend fun obtainMovie(id: Int) = withContext(Dispatchers.IO) {
+    suspend fun loadMovieById(id: Int) = withContext(Dispatchers.IO) {
 
         loadMovies().find { it.id == id }
     }
