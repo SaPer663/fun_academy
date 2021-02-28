@@ -8,23 +8,23 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.android.funacademy.R
 import com.example.android.funacademy.databinding.FragmentMoviesListBinding
-import com.example.android.funacademy.features.detailmovie.FragmentMoviesDetails
+import com.example.android.funacademy.features.detailmovie.FragmentMovieDetails
 import com.example.android.funacademy.utils.ResourceProvider
 
-class FragmentMoviesList : Fragment(R.layout.fragment_movies_list), ListenerMoviesAdapter {
+class FragmentMovieList : Fragment(R.layout.fragment_movies_list), ListenerMoviesAdapter {
 
     private lateinit var moviesAdapter: MoviesAdapter
     private var fragmentMoviesListBinding: FragmentMoviesListBinding? = null
     private val binding get() = fragmentMoviesListBinding!!
-    private lateinit var viewModel: ViewModelMoviesList
+    private lateinit var viewModel: ViewModelMovieList
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         moviesAdapter = MoviesAdapter(this)
         fragmentMoviesListBinding = FragmentMoviesListBinding.bind(view)
         val resourceProvider = ResourceProvider(requireContext())
-        val viewModelFactory = ViewModelMoviesListFactory(resourceProvider)
-        viewModel = ViewModelProvider(this, viewModelFactory).get(ViewModelMoviesList::class.java)
+        val viewModelFactory = ViewModelMovieListFactory(resourceProvider)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(ViewModelMovieList::class.java)
         binding.rvMovies.apply {
             layoutManager = GridLayoutManager(this.context, 2)
             adapter = moviesAdapter
@@ -51,7 +51,7 @@ class FragmentMoviesList : Fragment(R.layout.fragment_movies_list), ListenerMovi
         activity?.supportFragmentManager?.commit {
             setReorderingAllowed(true)
             addToBackStack(null)
-            replace(R.id.fragments_container, FragmentMoviesDetails.newInstance(id))
+            replace(R.id.fragments_container, FragmentMovieDetails.newInstance(id))
         }
     }
 }

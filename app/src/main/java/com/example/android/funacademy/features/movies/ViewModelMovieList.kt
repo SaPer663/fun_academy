@@ -8,7 +8,7 @@ import com.example.android.funacademy.model.Movie
 import com.example.android.funacademy.utils.ResourceProvider
 import kotlinx.coroutines.launch
 
-class ViewModelMoviesList(val resources: ResourceProvider) : ViewModel() {
+class ViewModelMovieList(private val resources: ResourceProvider) : ViewModel() {
 
     private var _movies = MutableLiveData<List<Movie>>()
     val movies: LiveData<List<Movie>> get() = _movies
