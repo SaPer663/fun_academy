@@ -8,4 +8,8 @@ class ResourceProvider(private val context: Context) : IResourceProvider {
     override suspend fun loadMovies(): List<Movie> {
         return JsonLoad(context).loadMovies()
     }
+
+    override suspend fun loadMovieById(id: Int): Movie? {
+        return JsonLoad(context).loadMovieById(id)
+    }
 }
