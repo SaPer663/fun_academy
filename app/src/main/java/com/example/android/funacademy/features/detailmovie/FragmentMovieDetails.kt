@@ -3,7 +3,6 @@ package com.example.android.funacademy.features.detailmovie
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -14,6 +13,7 @@ import com.example.android.funacademy.R
 import com.example.android.funacademy.databinding.FragmentMoviesDetailsBinding
 import com.example.android.funacademy.model.Movie
 import com.example.android.funacademy.utils.ResourceProvider
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.*
 
 class FragmentMovieDetails : Fragment(R.layout.fragment_movies_details) {
@@ -34,18 +34,10 @@ class FragmentMovieDetails : Fragment(R.layout.fragment_movies_details) {
             this,
             viewModelMovieDetailsFactory
         ).get(ViewModelMovieDetails::class.java)
-        viewModel.apply {
-            loadMovie(movieId)
-            stateMovieLoaded.observe(viewLifecycleOwner, { state ->
-                when (state) {
-                    is MovieDetailsState.MovieLoaded -> setupView(state.movie)
-                    MovieDetailsState.NoMovie -> showErrorToast()
-                }
-            })
-        }
-        tvBack = binding.back.apply {
-            setOnClickListener { onClickBack() }
-        }
+
+        viewModel.loadMovie(movieId)
+        stateMovieLoadedSubscription()
+        setupOnClickBack()
     }
 
     override fun onDestroyView() {
@@ -53,17 +45,32 @@ class FragmentMovieDetails : Fragment(R.layout.fragment_movies_details) {
         super.onDestroyView()
     }
 
-    private fun showErrorToast() {
-        Toast.makeText(
-            requireContext(),
-            "No movie found with this ID",
-            Toast.LENGTH_SHORT
+    private fun stateMovieLoadedSubscription() {
+        viewModel.stateMovieLoaded.observe(viewLifecycleOwner, { state ->
+            when (state) {
+                is MovieDetailsState.MovieLoaded -> setupView(state.movie)
+                MovieDetailsState.NoMovie -> showErrorSnackbar()
+            }
+        })
+    }
+
+    private fun showErrorSnackbar() {
+        Snackbar.make(
+            binding.root,
+            getText(R.string.show_error_toast_text),
+            Snackbar.LENGTH_SHORT
         ).show()
     }
 
     private fun onClickBack() {
         activity?.supportFragmentManager?.apply {
             popBackStack()
+        }
+    }
+
+    private fun setupOnClickBack() {
+        tvBack = binding.back.apply {
+            setOnClickListener { onClickBack() }
         }
     }
 
