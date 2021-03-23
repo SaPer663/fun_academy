@@ -1,5 +1,6 @@
 package com.example.android.funacademy.features.movies
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -17,22 +18,23 @@ class FragmentMovieList : Fragment(R.layout.fragment_movies_list), ListenerMovie
     private var fragmentMoviesListBinding: FragmentMoviesListBinding? = null
     private val binding get() = fragmentMoviesListBinding!!
     private lateinit var viewModel: ViewModelMovieList
+    private var resourceProvider: ResourceProvider? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        resourceProvider = ResourceProvider(context)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         moviesAdapter = MoviesAdapter(this)
         fragmentMoviesListBinding = FragmentMoviesListBinding.bind(view)
-        val resourceProvider = ResourceProvider(requireContext())
         val viewModelFactory = ViewModelMovieListFactory(resourceProvider)
         viewModel = ViewModelProvider(this, viewModelFactory).get(ViewModelMovieList::class.java)
         binding.rvMovies.apply {
             layoutManager = GridLayoutManager(this.context, 2)
             adapter = moviesAdapter
         }
-    }
-
-    override fun onStart() {
-        super.onStart()
         loadData()
     }
 
