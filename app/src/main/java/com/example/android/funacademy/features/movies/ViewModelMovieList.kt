@@ -8,18 +8,14 @@ import com.example.android.funacademy.model.Movie
 import com.example.android.funacademy.utils.ResourceProvider
 import kotlinx.coroutines.launch
 
-class ViewModelMovieList(private val resources: ResourceProvider) : ViewModel() {
+class ViewModelMovieList(private val resources: ResourceProvider?) : ViewModel() {
 
     private var _movies = MutableLiveData<List<Movie>>()
     val movies: LiveData<List<Movie>> get() = _movies
 
-    init {
-        loadMovies()
-    }
-
-    private fun loadMovies() {
+    internal fun loadMovies() {
         viewModelScope.launch {
-            _movies.postValue(resources.loadMovies())
+            _movies.postValue(resources?.loadMovies())
         }
     }
 }

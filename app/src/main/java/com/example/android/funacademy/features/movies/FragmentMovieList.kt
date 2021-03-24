@@ -38,15 +38,20 @@ class FragmentMovieList : Fragment(R.layout.fragment_movies_list), ListenerMovie
         loadData()
     }
 
-    private fun loadData() {
-        viewModel.movies.observe(viewLifecycleOwner, { movieList ->
-            moviesAdapter.bindMovies(movieList)
-        })
+    override fun onStart() {
+        viewModel.loadMovies()
+        super.onStart()
     }
 
     override fun onDestroyView() {
         fragmentMoviesListBinding = null
         super.onDestroyView()
+    }
+
+    private fun loadData() {
+        viewModel.movies.observe(viewLifecycleOwner, { movieList ->
+            moviesAdapter.bindMovies(movieList)
+        })
     }
 
     override fun clickItemMovieList(id: Int) {
