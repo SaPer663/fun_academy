@@ -1,4 +1,4 @@
-package com.example.android.funacademy
+package com.example.android.funacademy.features.movies
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,6 +7,7 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.android.funacademy.R
 import com.example.android.funacademy.databinding.ViewMovieItemBinding
 import com.example.android.funacademy.model.Movie
 

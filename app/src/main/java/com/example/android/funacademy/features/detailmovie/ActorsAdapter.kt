@@ -1,4 +1,4 @@
-package com.example.android.funacademy
+package com.example.android.funacademy.features.detailmovie
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
